@@ -14,7 +14,7 @@ Sitio estático (un solo `index.html`, sin build) para https://10care.s4l.life/
 2. Cloudflare → Workers & Pages → Create → Pages → Connect to Git → elegir el repo.
    - Framework preset: **None**
    - Build command: *(vacío)*
-   - Build output directory: `/`
+   - Deploy command: `npx wrangler deploy` (sirve solo `public/`, ver wrangler.jsonc)
 3. Pages → proyecto → Custom domains → Set up a domain → `10care.s4l.life`.
 4. En **GoDaddy** (DNS de s4l.life): quitar/editar el registro actual de `10care` (apunta a Latinoamerican Hosting / Wix) y crear:
    - Tipo `CNAME`, Nombre `10care`, Valor `<proyecto>.pages.dev`, TTL 600.
