@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>10Care · Estamos en modernización</title>
+  <meta name="description" content="10Care está en modernización. Estamos preparando algo especial para ti. Vuelve pronto.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0f766e">
+  <meta property="og:title" content="10Care · Estamos preparando algo especial">
+  <meta property="og:description" content="Nuestro sitio está en modernización. Muy pronto volvemos con una nueva experiencia.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f766e'/%3E%3Cpath d='M32 49S14 38 14 25a9 9 0 0 1 18-3 9 9 0 0 1 18 3c0 13-18 24-18 24z' fill='%23fff'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f4fbf9;
+      --bg2: #dff3ee;
+      --ink: #0b2a27;
+      --muted: #3f5f5b;
+      --brand: #0f766e;
+      --accent: #14b8a6;
+      --card: rgba(255,255,255,.72);
+      --line: rgba(15,118,110,.18);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #07201e;
+        --bg2: #0a2f2b;
+        --ink: #e8f7f4;
+        --muted: #9cc3bd;
+        --brand: #2dd4bf;
+        --accent: #14b8a6;
+        --card: rgba(255,255,255,.06);
+        --line: rgba(45,212,191,.25);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--ink);
+      background: radial-gradient(1200px 600px at 20% -10%, var(--bg2), transparent 60%),
+                  radial-gradient(900px 500px at 100% 110%, var(--bg2), transparent 60%),
+                  var(--bg);
+      display: grid;
+      place-items: center;
+      padding: 24px 16px;
+      overflow-x: hidden;
+    }
+    main {
+      width: min(640px, 100%);
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: clamp(28px, 6vw, 56px) clamp(20px, 5vw, 48px);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 20px 60px -20px rgba(15,118,110,.35);
+    }
+    .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.6rem; letter-spacing: -.02em; color: var(--brand); }
+    .heart { width: 34px; height: 34px; animation: beat 2.4s ease-in-out infinite; transform-origin: center; }
+    @keyframes beat { 0%,100% { transform: scale(1); } 12% { transform: scale(1.18); } 24% { transform: scale(1); } 36% { transform: scale(1.1); } 48% { transform: scale(1); } }
+    .badge {
+      display: inline-block; margin: 28px 0 16px; padding: 6px 14px;
+      border: 1px solid var(--line); border-radius: 999px;
+      font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--brand);
+    }
+    h1 { font-size: clamp(1.9rem, 6vw, 2.8rem); line-height: 1.12; letter-spacing: -.03em; }
+    h1 span { background: linear-gradient(90deg, var(--brand), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    p.lead { margin: 18px auto 0; max-width: 46ch; color: var(--muted); font-size: 1.05rem; line-height: 1.6; }
+    .bar { margin: 32px auto 0; width: min(280px, 80%); height: 6px; border-radius: 6px; background: var(--line); overflow: hidden; }
+    .bar i { display: block; height: 100%; width: 40%; border-radius: 6px; background: linear-gradient(90deg, var(--accent), var(--brand)); animation: slide 2.2s ease-in-out infinite; }
+    @keyframes slide { 0% { transform: translateX(-100%); } 100% { transform: translateX(260%); } }
+    .note { margin-top: 14px; font-size: .85rem; color: var(--muted); }
+    footer { margin-top: 32px; font-size: .8rem; color: var(--muted); }
+    @media (prefers-reduced-motion: reduce) { .heart, .bar i { animation: none; } .bar i { width: 60%; } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="logo" aria-label="10Care">
+      <svg class="heart" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 54S10 40 10 24a11 11 0 0 1 22-4 11 11 0 0 1 22 4c0 16-22 30-22 30z" fill="currentColor"/></svg>
+      10Care
+    </div>
+
+    <span class="badge">Sitio en modernización</span>
+
+    <h1>Estamos preparando <span>algo especial</span> para ti</h1>
+
+    <p class="lead">
+      Estamos renovando por completo nuestra plataforma para ofrecerte una mejor experiencia de cuidado.
+      Muy pronto volveremos con novedades. ¡Gracias por tu paciencia!
+    </p>
+
+    <div class="bar" role="img" aria-label="Trabajando en el nuevo sitio"><i></i></div>
+    <p class="note">Trabajando en el nuevo sitio…</p>
+
+    <footer>&copy; <span id="y">2026</span> 10Care · S4L</footer>
+  </main>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
