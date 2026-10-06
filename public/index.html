@@ -74,7 +74,9 @@
     .bar i { display: block; height: 100%; width: 40%; border-radius: 6px; background: linear-gradient(90deg, var(--accent), var(--brand)); animation: slide 2.2s ease-in-out infinite; }
     @keyframes slide { 0% { transform: translateX(-100%); } 100% { transform: translateX(260%); } }
     .note { margin-top: 14px; font-size: .85rem; color: var(--muted); }
-    footer { margin-top: 32px; font-size: .8rem; color: var(--muted); }
+    footer { margin-top: 32px; font-size: .85rem; color: var(--muted); line-height: 1.6; }
+    footer a { color: var(--brand); font-weight: 600; text-underline-offset: 3px; }
+    footer .copy { display: block; margin-top: 8px; font-size: .78rem; opacity: .8; }
     @media (prefers-reduced-motion: reduce) { .heart, .bar i { animation: none; } .bar i { width: 60%; } }
   </style>
 </head>
@@ -97,7 +99,11 @@
     <div class="bar" role="img" aria-label="Trabajando en el nuevo sitio"><i></i></div>
     <p class="note">Trabajando en el nuevo sitio…</p>
 
-    <footer>&copy; <span id="y">2026</span> 10Care · S4L</footer>
+    <footer>
+      <strong>10Care</strong> es una marca de <strong>S4L</strong>.<br>
+      Para cualquier contacto escríbenos a <a href="mailto:info@s4l.life">info@s4l.life</a>
+      <span class="copy">&copy; <span id="y">2026</span> S4L. Todos los derechos reservados.</span>
+    </footer>
   </main>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
