@@ -1,0 +1,28 @@
+# Despliegue a Cloudflare Pages (proyecto 10care-site): automático en cada push a main y manual con workflow_dispatch.
+# Secretos: CLOUDFLARE_API_TOKEN (Pages Write, vence el 16 oct 2027) y CLOUDFLARE_ACCOUNT_ID.
+name: Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Publicar en Cloudflare Pages
+        run: npx -y wrangler@4 pages deploy public --project-name 10care-site --branch main --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
